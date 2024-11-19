@@ -1,7 +1,12 @@
-business
-entertainment
-general
-health
-science
-sports
-technology
+<Route path="/general" element={<News pageSize={5} category="general" />} />
+<Route path="/business" element={<News pageSize={5} category="business" />} />
+<Route path="/entertainment" element={<News pageSize={5} category="entertainment" />} />
+<Route path="/health" element={<News pageSize={5} category="health" />} />
+<Route path="/science" element={<News pageSize={5} category="science" />} />
+<Route path="/sports" element={<News pageSize={5} category="sports" />} />
+<Route path="/technology" element={<News pageSize={5} category="technology" />} />
+
+
+
+
+<Route path="/" element={<News pageSize={5} category="general" />} />
