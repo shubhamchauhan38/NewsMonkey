@@ -13,6 +13,9 @@ export class News extends Component {
     pageSize: PropTypes.number,
     category: PropTypes.string,
   };
+  capitalizeFirstLetter = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+} 
   constructor(props) {
     super(props);
     this.state = {
@@ -21,7 +24,7 @@ export class News extends Component {
       page: 1,
       totalArticles: 0,
     };
-    document.title = this.props.category;
+    document.title = `${this.capitalizeFirstLetter(this.props.category)} - NewsMonkey`;
   }
   async UpdateNews(page){
     const url = `https://newsapi.org/v2/top-headlines?country=us&category=${this.props.category}&&category=${this.props.category}&&apiKey=94cf5130dcc7438aa389fc0c5cb8fb11&page=${this.state.page}&pageSize=${this.props.pageSize}`;
